@@ -1,3 +1,4 @@
+This is a Fork Version from https://github.com/Forceflow/ooc_svo_builder
 # Out-Of-Core SVO Builder v1.6
 
 **NOTICE:** SInce 1.6 alpha this tool uses GLM for easy vector math. Also, an important bug with partitioning was fixed - although I'm still testing out 1.6, I heartily recommend switching to the newer codebase.
