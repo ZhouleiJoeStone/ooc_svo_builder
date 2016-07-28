@@ -2,9 +2,9 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <BINARY_OUTPUT_DIR>D:\jeroenb\Binaries\</BINARY_OUTPUT_DIR>
-    <TRIMESH_DIR>C:\libs\trimesh2\</TRIMESH_DIR>
-	<GLM_DIR>C:\libs\glm\</GLM_DIR>
+    <BINARY_OUTPUT_DIR>..\..\bin</BINARY_OUTPUT_DIR>
+    <TRIMESH_DIR>..\..\src\libs\trimesh2\</TRIMESH_DIR>
+    <GLM_DIR>..\..\src\libs\glm\</GLM_DIR>
   </PropertyGroup>
   <PropertyGroup>
     <IncludePath>$(GLM_DIR);$(TRIMESH_DIR)\include\;$(SolutionDir)\..\..\src\libs\libtri\include\;$(IncludePath)</IncludePath>
@@ -12,7 +12,12 @@
     <LibraryPath>$(TRIMESH_DIR)\lib.Win$(PlatformArchitecture).vs$(PlatformToolsetVersion);$(LibraryPath)</LibraryPath>
     <OutDir>$(BINARY_OUTPUT_DIR)</OutDir>
   </PropertyGroup>
-  <ItemDefinitionGroup />
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalLibraryDirectories>..\..\src\libs\trimesh2\lib.Win64.vs140</AdditionalLibraryDirectories>
+      <AdditionalDependencies>trimesh.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemGroup>
     <BuildMacro Include="BINARY_OUTPUT_DIR">
       <Value>$(BINARY_OUTPUT_DIR)</Value>
@@ -22,7 +27,7 @@
       <Value>$(TRIMESH_DIR)</Value>
       <EnvironmentVariable>true</EnvironmentVariable>
     </BuildMacro>
-	<BuildMacro Include="GLM_DIR">
+    <BuildMacro Include="GLM_DIR">
       <Value>$(GLM_DIR)</Value>
       <EnvironmentVariable>true</EnvironmentVariable>
     </BuildMacro>
