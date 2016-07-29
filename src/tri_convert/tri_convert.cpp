@@ -78,6 +78,12 @@ void parseProgramParameters(int argc, char* argv[]){
 int main(int argc, char *argv[]){
 	printInfo();
 
+	argc = 3;
+	argv[0] = "tri_convert.exe";
+	argv[1] = "-f";
+	argv[2] = "F:\\Test_Model\\sphere.ply";
+
+
 	// Parse parameters
 	parseProgramParameters(argc,argv);
 

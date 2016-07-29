@@ -25,13 +25,13 @@ string version = "1.6 alpha";
 
 // Program parameters
 string filename = "";
-size_t gridsize = 1024;
+size_t gridsize = 2048;
 size_t voxel_memory_limit = 2048;
 float sparseness_limit = 0.10f;
 ColorType color = COLOR_FROM_MODEL;
 vec3 fixed_color = vec3(1.0f, 1.0f, 1.0f); // fixed color is white
-bool generate_levels = false;
-bool verbose = false;
+bool generate_levels = true;
+bool verbose = true;
 
 // trip header info
 TriInfo tri_info;
@@ -284,6 +284,12 @@ int main(int argc, char *argv[]) {
 #if defined(_WIN32) || defined(_WIN64)
 	_setmaxstdio(1024); // increase file descriptor limit in Windows
 #endif
+
+	argc = 3;
+	argv[0] = "svo_builder.exe";
+	argv[1] = "-f";
+	argv[2] = "F:\\Test_Model\\sphere.tri";
+
 
 	// Parse program parameters
 	printInfo();
